@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jose Fernando Nacif Carvalho — CV</title>
+  <meta name="description" content="CV online de Jose Fernando Nacif Carvalho: IA aplicada, modelos secuenciales, desarrollo web y APIs." />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Jose Fernando Nacif Carvalho — CV" />
+  <meta property="og:description" content="IA aplicada, modelos secuenciales, desarrollo web y APIs." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="" />
+  <meta property="og:image" content="assets/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="color-scheme" content="dark light">
+  <meta id="theme-color" name="theme-color" content="#0b0f1a">
+
+  <link rel="icon" href="assets/favicon.ico" />
+  <style>
+    :root{
+      --bg:#0b0f1a;--panel:#101826;--muted:#a5b4c3;--text:#e6edf6;--brand:#7aa2f7;--brand-2:#9d7fff;--border:#1b2433;--ok:#32d583;--warn:#f59e0b;
+      --maxw:1080px;--radius:16px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,"Noto Sans",sans-serif;background:var(--bg);color:var(--text);}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:var(--maxw);margin:0 auto;padding:24px}
+    header{position:sticky;top:0;z-index:20;background:linear-gradient(180deg,var(--bg) 0%, rgba(11,15,26,0.85) 85%, rgba(11,15,26,0) 100%);backdrop-filter:saturate(120%) blur(6px);border-bottom:1px solid var(--border)}
+    nav{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;gap:12px;align-items:center}
+    .avatar{width:40px;height:40px;border-radius:50%;background:#1c2536 url('assets/avatar.jpg') center/cover no-repeat;border:1px solid var(--border)}
+    .brand h1{font-size:16px;margin:0;font-weight:600}
+    .nav-links a{opacity:.9}
+    .btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--brand),var(--brand-2));border:0;color:#0b0f1a;padding:10px 14px;border-radius:12px;font-weight:600}
+    .btn.secondary{background:transparent;color:var(--text);border:1px solid var(--border)}
+    .grid{display:grid;gap:20px}
+    .hero{display:grid;gap:14px;padding:40px 0}
+    .hero h2{font-size:clamp(28px,4.2vw,42px);line-height:1.1;margin:0}
+    .hero p{color:var(--muted);max-width:70ch;margin:0}
+    .badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+    .badge{font-size:12px;padding:6px 10px;border:1px solid var(--border);border-radius:999px;color:var(--muted)}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+    .card{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:16px}
+    .card h3{margin:0 0 6px 0;font-size:18px}
+    .muted{color:var(--muted)}
+    section{padding:24px 0}
+    h2.section-title{font-size:22px;margin:0 0 12px 0}
+    ul.clean{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+    .kpi{display:flex;gap:12px;align-items:center}
+    .kpi .dot{width:8px;height:8px;border-radius:50%;background:var(--ok)}
+    .kpi.warn .dot{background:var(--warn)}
+    footer{border-top:1px solid var(--border);margin-top:32px;padding:28px 0;color:var(--muted)}
+    .row{display:flex;gap:12px;flex-wrap:wrap}
+    .tag{border:1px solid var(--border);padding:6px 10px;border-radius:10px}
+    .xp-item{display:grid;gap:6px;border-left:2px solid var(--border);padding-left:12px}
+    .xp-item h3{margin:0;font-size:16px}
+    .xp-item .when{font-size:12px;color:var(--muted)}
+    .projects .card footer{display:flex;justify-content:space-between;align-items:center;margin-top:8px;padding-top:8px;border-top:1px solid var(--border)}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    /* Responsive tweaks */
+    @media (max-width:680px){.nav-links{display:none}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav aria-label="Principal">
+        <div class="brand">
+          <div class="avatar" aria-hidden="true"></div>
+          <h1>Jose Fernando Nacif Carvalho</h1>
+        </div>
+        <div class="nav-links">
+          <a href="#sobre-mi">Sobre mí</a>
+          <a href="#skills">Skills</a>
+          <a href="#proyectos">Proyectos</a>
+          <a href="#experiencia">Experiencia</a>
+          <a href="#contacto">Contacto</a>
+        </div>
+        <div class="actions">
+          <a class="btn secondary" href="assets/JoseFernandoNacifCV.pdf" download>Descargar CV</a>
+          <button id="mode" class="btn" aria-pressed="false" aria-label="Cambiar tema">Modo</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <h2 id="hero-title">Ingeniero en Sistemas · Desarrollador con enfoque en IA</h2>
+      <p>Diseño y desarrollo soluciones con <strong>IA aplicada</strong> (modelos secuenciales y convolucionales), integración de <strong>APIs de IA</strong>, y despliegue de frontends rápidos para productos y prototipos. Interés en <strong>trading algorítmico</strong> y analítica.</p>
+      <div class="badges" aria-label="Especialidades">
+        <span class="badge">Modelos secuenciales (LSTM, GRU)</span>
+        <span class="badge">CNN+GRU con Atención</span>
+        <span class="badge">Integración de APIs (OpenAI, etc.)</span>
+        <span class="badge">React / Bootstrap</span>
+        <span class="badge">MySQL · GitHub</span>
+      </div>
+      <div class="row" style="margin-top:8px">
+        <a class="btn" href="#contacto">Contactar</a>
+        <a class="btn secondary" href="#proyectos">Ver proyectos</a>
+      </div>
+    </section>
+
+    <!-- SOBRE MI -->
+    <section id="sobre-mi" aria-labelledby="sobre-mi-title">
+      <h2 class="section-title" id="sobre-mi-title">Sobre mí</h2>
+      <div class="card">
+        <p>Soy programador con enfoque en <strong>IA aplicada</strong> y desarrollo de software. Me especializo en <strong>modelos secuenciales</strong> (LSTM/GRU) y arquitecturas <strong>CNN+GRU con atención</strong> para series temporales, además de la <strong>integración de APIs</strong> de IA en aplicaciones web. Trabajo con metodologías ágiles y buenas prácticas de documentación (UML, RF/RNF).</p>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" aria-labelledby="skills-title">
+      <h2 class="section-title" id="skills-title">Stack & Skills</h2>
+      <div class="cards">
+        <article class="card" aria-labelledby="tech-title">
+          <h3 id="tech-title">Tecnologías</h3>
+          <div class="row">
+            <span class="tag">Python</span>
+            <span class="tag">Java</span>
+            <span class="tag">PHP</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">TensorFlow/Keras</span>
+            <span class="tag">Bootstrap</span>
+            <span class="tag">React</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">Git/GitHub</span>
+            <span class="tag">Tableau</span>
+            <span class="tag">MetaTrader</span>
+          </div>
+        </article>
+        <article class="card" aria-labelledby="metodos-title">
+          <h3 id="metodos-title">Metodologías & Buenas prácticas</h3>
+          <ul class="clean">
+            <li>Scrum y gestión de entregables.</li>
+            <li>UML y documentación funcional/técnica.</li>
+            <li>Accesibilidad y performance en front-end.</li>
+            <li>Versionado y control de cambios con Git.</li>
+          </ul>
+        </article>
+        <article class="card" aria-labelledby="kpis-title">
+          <h3 id="kpis-title">Logros/Métricas</h3>
+          <ul class="clean">
+            <li class="kpi"><span class="dot" aria-hidden="true"></span>Backtests con PF &gt; 1.3 (proyectos de trading algorítmico)</li>
+            <li class="kpi"><span class="dot" aria-hidden="true"></span>Prototipos IA integrados con APIs (chatbots y análisis)</li>
+            <li class="kpi warn"><span class="dot" aria-hidden="true"></span>Optimización de frontends (mejoras de TTI/LCP)</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section id="proyectos" class="projects" aria-labelledby="proyectos-title">
+      <h2 class="section-title" id="proyectos-title">Proyectos destacados</h2>
+      <div class="cards">
+        <article class="card" aria-labelledby="p1-title">
+          <h3 id="p1-title">Sistema CNN+GRU Multihorizonte con Atención (EUR/USD)</h3>
+          <p class="muted">Serie temporal financiera con arquitectura híbrida; generación de señales y evaluación con walk‑forward.</p>
+          <ul class="clean">
+            <li>Rol: diseño de arquitectura, entrenamiento y evaluación.</li>
+            <li>Tecnologías: Python, TensorFlow/Keras, NumPy, Pandas.</li>
+            <li>Resultado: cobertura configurable y control de riesgo con métricas PF/Sharpe.</li>
+          </ul>
+          <footer>
+            <a href="#" aria-label="Repositorio del proyecto">Repositorio</a>
+            <span class="muted">Próximamente</span>
+          </footer>
+        </article>
+        <article class="card" aria-labelledby="p2-title">
+          <h3 id="p2-title">SGIIT — Gestión Integral de Incidentes de Tránsito</h3>
+          <p class="muted">Sistema académico con módulos de personas, vehículos, licencias y bitácora de auditoría (MySQL + PHP).</p>
+          <ul class="clean">
+            <li>Rol: diseño de base de datos y backend MVC.</li>
+            <li>Tecnologías: PHP, MySQL, Bootstrap, DataTables.</li>
+            <li>Resultado: CRUDs y reportes con trazabilidad (triggers de auditoría).</li>
+          </ul>
+          <footer>
+            <a href="#" aria-label="Repositorio del proyecto">Repositorio</a>
+            <span class="muted">Próximamente</span>
+          </footer>
+        </article>
+        <article class="card" aria-labelledby="p3-title">
+          <h3 id="p3-title">LO CONCILIUM — Landing con Chatbot IA</h3>
+          <p class="muted">Landing corporativa con integración de API de IA para asistencia conversacional.</p>
+          <ul class="clean">
+            <li>Rol: maquetación, prompts y filtro de riesgo.</li>
+            <li>Tecnologías: HTML, CSS, JS, Bootstrap, API de IA.</li>
+            <li>Resultado: prototipo funcional y responsive.</li>
+          </ul>
+          <footer>
+            <a href="#" aria-label="Repositorio del proyecto">Repositorio</a>
+            <span class="muted">Próximamente</span>
+          </footer>
+        </article>
+      </div>
+    </section>
+
+    <!-- EXPERIENCIA -->
+    <section id="experiencia" aria-labelledby="experiencia-title">
+      <h2 class="section-title" id="experiencia-title">Experiencia</h2>
+      <div class="cards">
+        <article class="card xp-item" aria-labelledby="xp1-title">
+          <h3 id="xp1-title">Desarrollo de Prototipos con IA</h3>
+          <span class="when">2023–2025</span>
+          <ul class="clean">
+            <li>Integración de APIs de IA en frontends y servicios.</li>
+            <li>Modelado de series temporales con LSTM/GRU y CNN+GRU.</li>
+            <li>Automatización de pruebas y control de versiones con Git.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- EDUCACIÓN -->
+    <section id="educacion" aria-labelledby="edu-title">
+      <h2 class="section-title" id="edu-title">Educación</h2>
+      <div class="card">
+        <ul class="clean">
+          <li>Ingeniería de Sistemas — UTEPSA (en curso)</li>
+
+        </ul>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" aria-labelledby="contacto-title">
+      <h2 class="section-title" id="contacto-title">Contacto</h2>
+      <div class="card">
+        <p class="muted">¿Conversamos? Abierto a roles en IA/MLE, MLOps o desarrollo con IA.</p>
+        <ul class="clean">
+          <li>Email: <a href="mailto:josefernando.nc@gmail.com">josefernando.nc@gmail.com</a></li>
+          <li>LinkedIn: <a href="https://www.linkedin.com/in/josefernandonacif/" target="_blank" rel="noopener noreferrer">linkedin.com/in/josefernandonacif</a></li>
+          <li>GitHub: <a href="https://github.com/Blaydor09" target="_blank" rel="noopener noreferrer">github.com/Blaydor09</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="row" style="justify-content:space-between;align-items:center">
+        <small>© <span id="year"></span> Jose Fernando Nacif Carvalho · Última actualización <time id="last-update" datetime="">—</time></small>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JSON-LD Person -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Jose Fernando Nacif Carvalho",
+    "jobTitle": "Ingeniero en Sistemas / Desarrollador con IA",
+    "url": "",
+    "sameAs": [
+      "https://github.com/tuusuario",
+      "https://www.linkedin.com/in/tuusuario"
+    ],
+    "knowsAbout": ["LSTM", "GRU", "CNN", "APIs de IA", "Trading algorítmico", "MySQL", "React", "Bootstrap"],
+    "email": "mailto:tu-email@ejemplo.com"
+  }
+  </script>
+
+  <script>
+    // Año y fecha de actualización
+    const yr = document.getElementById('year');
+    const lu = document.getElementById('last-update');
+    const themeMeta = document.querySelector('meta#theme-color');
+    yr.textContent = new Date().getFullYear();
+    const d = new Date();
+    lu.textContent = d.toLocaleDateString();
+    lu.setAttribute('datetime', d.toISOString());
+
+    
+
+    // Toggle de tema simple (oscuro por defecto)
+    const btn = document.getElementById('mode');
+    let light = false;
+    const setTheme = () => {
+      if(light){
+        document.documentElement.style.setProperty('--bg','#f7f9fc');
+        document.documentElement.style.setProperty('--panel','#ffffff');
+        document.documentElement.style.setProperty('--text','#0b1220');
+        document.documentElement.style.setProperty('--muted','#475569');
+        document.documentElement.style.setProperty('--border','#e2e8f0');
+        document.documentElement.style.setProperty('--bg','#f7f9fc');
+        themeMeta.setAttribute('content', '#f7f9fc');
+      } else {
+        document.documentElement.style.setProperty('--bg','#0b0f1a');
+        document.documentElement.style.setProperty('--panel','#101826');
+        document.documentElement.style.setProperty('--text','#e6edf6');
+        document.documentElement.style.setProperty('--muted','#a5b4c3');
+        document.documentElement.style.setProperty('--border','#1b2433');
+        document.documentElement.style.setProperty('--bg','#0b0f1a');
+        themeMeta.setAttribute('content', '#0b0f1a');
+      }
+    };
+    setTheme();
+    btn.addEventListener('click',()=>{ light = !light; btn.setAttribute('aria-pressed', String(light)); setTheme(); });
+  </script>
+</body>
+</html>
